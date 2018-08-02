@@ -12,8 +12,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieRemoteDataSource implements MovieDataSource {
+    private static MovieRemoteDataSource sInstance;
+
+    private MovieRemoteDataSource() {
+
+    }
+
     public static MovieRemoteDataSource getInstance() {
-        return new MovieRemoteDataSource();
+        if (sInstance == null) {
+            sInstance = new MovieRemoteDataSource();
+        }
+        return sInstance;
     }
 
     @Override
