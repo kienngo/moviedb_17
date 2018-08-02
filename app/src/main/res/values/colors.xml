@@ -3,4 +3,10 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <!--color background-->
+    <color name="color_gallery">#EEECEC</color>
+    <!--color progress dialog-->
+    <color name="color_silver">#CCCCCC</color>
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_dodger_blue">#2196F3</color>
 </resources>

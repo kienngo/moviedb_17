@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">MovieBD</string>
+    <string name="content_description_image">Content Decription Image</string>
+    <string name="more">More</string>
+    <string name="setting">Settings</string>
+    <string name="icon_menu">Icon Menu</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="search">Search</string>
+    <string name="movie">Movie</string>
+    <string name="television">Television</string>
+    <string name="people">People</string>
+    <string name="genres">Genres</string>
+    <string name="changes_24h">Changes 24h</string>
+    <string name="notification">Information</string>
+    <string name="rate">Rate</string>
+    <string name="movie_popular">Movie popular</string>
+    <string name="movie_now_playing">Movie now playing</string>
+    <string name="loading_data">Loading data  &#8230;</string>
+    <string name="admin">Admin</string>
+    <string name="company">Framgia Edu</string>
 </resources>

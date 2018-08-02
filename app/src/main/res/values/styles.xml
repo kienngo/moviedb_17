@@ -8,4 +8,84 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--AppTheme NoActionBar-->
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--Style for TextView Title App-->
+    <style name="TextViewTitleApp">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/dp_20</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_toRightOf">@+id/image_menu</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <!--Style for Image Title App-->
+    <style name="ImageViewTitleApp">
+        <item name="android:layout_width">?attr/actionBarSize</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:padding">@dimen/dp_12</item>
+        <item name="android:src">@drawable/ic_menu</item>
+    </style>
+
+    <!--Style Toolbar for All-->
+    <style name="ToolBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="layout_scrollFlags">scroll|enterAlways</item>
+        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <!--Style CardView-->
+    <style name="CardViewAll">
+        <item name="android:layout_marginLeft">@dimen/dp_8dp</item>
+        <item name="android:layout_marginRight">@dimen/dp_8dp</item>
+        <item name="android:layout_marginTop">@dimen/dp_8dp</item>
+        <item name="cardElevation">0dp</item>
+    </style>
+
+    <!--Style for Textview Title in CardView-->
+    <style name="TextViewTitleCardView" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:paddingLeft">@dimen/dp_16</item>
+        <item name="android:paddingTop">@dimen/dp_16</item>
+    </style>
+
+    <!--Style for Textview More in Cardview-->
+    <style name="TextViewMoreCardView" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:paddingTop">@dimen/dp_16</item>
+        <item name="android:paddingRight">@dimen/dp_16</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:text">@string/more</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <!--Style for Textview Item Movie-->
+    <style name="TextViewItemMovie" parent="TextAppearance.AppCompat.Large">
+        <item name="android:ellipsize">end</item>
+        <item name="android:maxLines">2</item><item name="android:textSize">@dimen/sp_15</item>
+    </style>
+
+    <!--Style padding item movie-->
+    <style name="PaddingItemMovie">
+        <item name="android:paddingLeft">@dimen/dp_16</item>
+        <item name="android:paddingTop">@dimen/dp_16</item>
+    </style>
+
+    <!--Style theme dialog-->
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/color_white</item>
+        <item name="android:textColorPrimary">@color/color_silver</item>
+        <item name="android:background">@color/color_dodger_blue</item>
+    </style>
 </resources>
