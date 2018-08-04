@@ -1,134 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:orientation="vertical">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
-        <android.support.v7.widget.CardView
-            style="@style/CardViewAll"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <RelativeLayout
+            <android.support.v7.widget.CardView
+                style="@style/CardViewAll"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/text_movies_popular"
-                    style="@style/TextViewTitleCardView"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/movie_popular" />
+                    android:orientation="vertical">
 
-                <TextView
-                    style="@style/TextViewMoreCardView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/text_movies_popular"
+                        style="@style/TextViewTitleCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/movie_popular" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/movies_popular"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/text_movies_popular" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        style="@style/TextViewMoreCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-        <android.support.v7.widget.CardView
-            style="@style/CardViewAll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/movies_popular"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/text_movies_popular" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
-            <RelativeLayout
+            <android.support.v7.widget.CardView
+                style="@style/CardViewAll"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/text_movies_now_playing"
-                    style="@style/TextViewTitleCardView"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/movie_now_playing" />
+                    android:orientation="vertical">
 
-                <TextView
-                    style="@style/TextViewMoreCardView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/text_movies_now_playing"
+                        style="@style/TextViewTitleCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/movie_now_playing" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/movies_now_playing"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/text_movies_now_playing" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        style="@style/TextViewMoreCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-        <android.support.v7.widget.CardView
-            style="@style/CardViewAll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/movies_now_playing"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/text_movies_now_playing" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
-            <RelativeLayout
+            <android.support.v7.widget.CardView
+                style="@style/CardViewAll"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/text_movies_top_rated"
-                    style="@style/TextViewTitleCardView"
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/movie_now_playing" />
+                    android:orientation="vertical">
 
-                <TextView
-                    style="@style/TextViewMoreCardView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/text_movies_top_rated"
+                        style="@style/TextViewTitleCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/movie_top_rated" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/movies_top_rated"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/text_movies_top_rated" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        style="@style/TextViewMoreCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-        <android.support.v7.widget.CardView
-            style="@style/CardViewAll"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/movies_top_rated"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/text_movies_top_rated" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
 
-            <RelativeLayout
+            <android.support.v7.widget.CardView
+                style="@style/CardViewAll"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/text_movies_upcoming"
-                    style="@style/TextViewTitleCardView"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/movie_now_playing" />
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    style="@style/TextViewMoreCardView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/text_movies_upcoming"
+                        style="@style/TextViewTitleCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/movie_upcoming" />
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/movies_upcoming"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/text_movies_upcoming" />
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
+                    <TextView
+                        style="@style/TextViewMoreCardView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
-    </LinearLayout>
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/movies_upcoming"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/text_movies_upcoming" />
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
 
-</ScrollView>
+    </ScrollView>
+
+    <include
+        android:id="@+id/dialog_loading"
+        layout="@layout/dialog_loading" />
+
+</RelativeLayout>

@@ -47,8 +47,6 @@
 
     <!--Style CardView-->
     <style name="CardViewAll">
-        <item name="android:layout_marginLeft">@dimen/dp_8dp</item>
-        <item name="android:layout_marginRight">@dimen/dp_8dp</item>
         <item name="android:layout_marginTop">@dimen/dp_8dp</item>
         <item name="cardElevation">0dp</item>
     </style>
@@ -73,7 +71,8 @@
     <!--Style for Textview Item Movie-->
     <style name="TextViewItemMovie" parent="TextAppearance.AppCompat.Large">
         <item name="android:ellipsize">end</item>
-        <item name="android:maxLines">2</item><item name="android:textSize">@dimen/sp_15</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:textSize">@dimen/sp_15</item>
     </style>
 
     <!--Style padding item movie-->
@@ -87,5 +86,35 @@
         <item name="colorAccent">@color/color_white</item>
         <item name="android:textColorPrimary">@color/color_silver</item>
         <item name="android:background">@color/color_dodger_blue</item>
+    </style>
+
+    <!--Style theme Edittext SearchParameter-->
+    <style name="EdittextSearch">
+        <item name="android:inputType">text</item>
+        <item name="android:imeOptions">actionSearch</item>
+        <item name="android:backgroundTint">@color/color_transparent</item>
+    </style>
+
+    <!--Style Textview title searchParameter-->
+    <style name="TextViewTitleSearch" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">@dimen/dp_20</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">@dimen/dp_10</item>
+    </style>
+
+    <!--Style Textview value option searchParameter-->
+    <style name="TextViewValueOptionSearch" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:gravity">start|center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">@dimen/dp_10</item>
+    </style>
+
+    <!--Style Textview Media Type-->
+    <style name="TextViewMediaType">
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/dp_4</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:background">@drawable/textview_movie</item>
+        <item name="android:layout_marginTop">@dimen/dp_10</item>
     </style>
 </resources>

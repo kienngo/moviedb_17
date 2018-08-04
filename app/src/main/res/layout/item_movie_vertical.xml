@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/PaddingItemMovie"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:padding="@dimen/dp_10">
 
     <com.github.siyamed.shapeimageview.RoundedImageView
         android:id="@+id/image_movie"
@@ -13,14 +13,14 @@
         app:siRadius="@dimen/dp_8dp" />
 
     <RelativeLayout
-        android:layout_width="@dimen/dp_108"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/dp_4">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/dp_10">
 
         <TextView
             android:id="@+id/text_title"
             style="@style/TextViewItemMovie"
-            android:layout_width="@dimen/dp_75"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <ImageView
@@ -28,15 +28,31 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_toRightOf="@+id/text_title"
             android:contentDescription="@string/icon_menu"
-            android:src="@drawable/ic_more_vert" />
+            android:src="@drawable/ic_favories_normal" />
+
+        <TextView
+            android:id="@+id/text_media_type"
+            style="@style/TextViewMediaType"
+            android:layout_width="@dimen/dp_64"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_title_movie" />
 
         <TextView
             android:id="@+id/text_vote_average"
             style="@style/TextViewItemMovie"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/text_title" />
+            android:layout_below="@+id/textview_title_movie"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_toEndOf="@+id/text_title" />
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_title"
+            android:layout_marginTop="@dimen/dp_10" />
     </RelativeLayout>
 </LinearLayout>
