@@ -12,8 +12,11 @@ public class Constants {
 
     public @interface ApiAddContent {
         String MOVIE_POPULAR = "movie/popular";
+        String MOVIE_NOWPLAYING = "movie/now_playing";
+        String MOVIE_TOP_RATED = "movie/top_rated";
+        String MOVIE_UPCOMING = "movie/upcoming";
     }
 
     // Final API MOVIE
-    public static final String FINAL_API_MOVIE = BaseApiUrl.API_URL + "%s?api_key=" + BuildConfig.API_KEY + "&language=%s&page=%d";
+    public static final String FINAL_API_MOVIE = BaseApiUrl.API_URL + "%s?api_key=" + BuildConfig.API_KEY + "&language=en-US&page=%d";
 }

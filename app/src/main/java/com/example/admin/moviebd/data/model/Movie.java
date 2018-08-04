@@ -62,13 +62,9 @@ public class Movie implements Serializable {
     public Movie(JSONObject jsonObject) {
         try {
             mId = jsonObject.optInt(NameParseUrl.ID, 0);
-
             mVoteAverage = jsonObject.optInt(NameParseUrl.VOTE_AVERAGE, 0);
-
             mTitleVideo = jsonObject.optString(NameParseUrl.TITLE, null);
-
             mPosterPath = jsonObject.optString(NameParseUrl.POSTER_PATH, null);
-
             mReleaseDate = jsonObject.optString(NameParseUrl.RELEASE_DATE, null);
         } catch (Exception e) {
             e.getMessage();

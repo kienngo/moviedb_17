@@ -25,7 +25,6 @@ public class LoadDataAsyntask extends AsyncTask<String, String, String> {
         mCallback.onStartLoading();
     }
 
-
     @Override
     protected String doInBackground(String... strings) {
         String response = "";
@@ -49,7 +48,7 @@ public class LoadDataAsyntask extends AsyncTask<String, String, String> {
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-        if (mCallback == null){
+        if (mCallback == null) {
             return;
         }
 
