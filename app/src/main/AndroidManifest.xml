@@ -22,5 +22,12 @@
         <activity
             android:name=".screen.search.SearchActivity"
             android:theme="@style/AppThemeNoActionBar" />
+        <activity
+            android:name=".screen.detail_tv.DetailActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".screen.trailer.TrailerActivity"
+            android:screenOrientation="landscape"></activity>
     </application>
+
 </manifest>

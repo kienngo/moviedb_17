@@ -11,4 +11,7 @@
     <color name="color_dodger_blue">#2196F3</color>
     <!--color background tint for edittext-->
     <color name="color_transparent">#00000000</color>
+    <color name="color_light_blue">#B5E4EE</color>
+    <color name="color_light_green">#200AA0</color>
+    <color name="color_black_70">#B3000000</color>
 </resources>

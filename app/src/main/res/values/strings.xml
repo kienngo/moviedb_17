@@ -10,10 +10,10 @@
     <string name="movie">Movie</string>
     <string name="television">Television</string>
     <string name="people">People</string>
-    <string name="genres">Genres</string>
+    <string name="genres">Genres:</string>
     <string name="changes_24h">Changes 24h</string>
     <string name="notification">Information</string>
-    <string name="rate">Rate</string>
+    <string name="rate">Rate: </string>
     <string name="movie_popular">Movie popular</string>
     <string name="movie_now_playing">Movie now playing</string>
     <string name="loading_data">Loading data  &#8230;</string>
@@ -51,4 +51,13 @@
         <item>2012</item>
         <item>2011</item>
     </string-array>
+    <string name="text_star">★</string>
+    <string name="date">28/02/2019</string>
+    <string name="over_view">Over View:</string>
+    <string name="season">Seasons</string>
+    <string name="all_season">All Season</string>
+    <string name="recommendations">Recommendations</string>
+    <string name="created_by">Featured Crew</string>
+    <string name="trailers">Trailers</string>
+    <string name="error">Error!</string>
 </resources>
