@@ -87,10 +87,10 @@ public class ResultSearchAdapter extends RecyclerView.Adapter<ResultSearchAdapte
             super(itemView);
             mImageMovie = itemView.findViewById(R.id.image_movie);
             mImageOption = itemView.findViewById(R.id.image_option);
-            mTextTitleMovie = itemView.findViewById(R.id.textview_title_movie);
-            mTextMediaType = itemView.findViewById(R.id.textview_media_type);
-            mTextVoteAverage = itemView.findViewById(R.id.textview_vote_average);
-            mTextDate = itemView.findViewById(R.id.textview_date);
+            mTextTitleMovie = itemView.findViewById(R.id.text_title);
+            mTextMediaType = itemView.findViewById(R.id.text_media_type);
+            mTextVoteAverage = itemView.findViewById(R.id.text_vote_average);
+            mTextDate = itemView.findViewById(R.id.text_date);
         }
     }
 }

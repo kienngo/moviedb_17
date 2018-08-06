@@ -12,15 +12,19 @@ public class SearchResult {
     private String mFirstAirDate;
     private String mReleaseDate;
 
-    public SearchResult(int id, String nameTelevision, String titleMovie, String mediaType, double voteAverage, String postPath, String firstAirDate, String releaseDate) {
-        mId = id;
-        mNameTelevision = nameTelevision;
-        mTitleMovie = titleMovie;
-        mMediaType = mediaType;
-        mVoteAverage = voteAverage;
-        mPostPath = postPath;
-        mFirstAirDate = firstAirDate;
-        mReleaseDate = releaseDate;
+    public SearchResult(JSONObject jsonObject) {
+        try {
+            mId = jsonObject.optInt(NameParseUrl.ID, 0);
+            mNameTelevision = jsonObject.optString(NameParseUrl.NAME_TELEVISION, null);
+            mTitleMovie = jsonObject.optString(NameParseUrl.TITLE_MOVIE, null);
+            mMediaType = jsonObject.optString(NameParseUrl.MEDIA_TYPE, null);
+            mVoteAverage = jsonObject.optDouble(NameParseUrl.VOTE_AVERAGE, 0);
+            mPostPath = jsonObject.optString(NameParseUrl.POST_PATH, null);
+            mFirstAirDate = jsonObject.optString(NameParseUrl.FIRST_AIR_DATE, null);
+            mReleaseDate = jsonObject.optString(NameParseUrl.RELEASE_DATE, null);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public int getId() {
@@ -85,21 +89,6 @@ public class SearchResult {
 
     public void setReleaseDate(String releaseDate) {
         mReleaseDate = releaseDate;
-    }
-
-    public SearchResult(JSONObject jsonObject) {
-        try {
-            mId = jsonObject.optInt(NameParseUrl.ID, 0);
-            mNameTelevision = jsonObject.optString(NameParseUrl.NAME_TELEVISION, null);
-            mTitleMovie = jsonObject.optString(NameParseUrl.TITLE_MOVIE, null);
-            mMediaType = jsonObject.optString(NameParseUrl.MEDIA_TYPE, null);
-            mVoteAverage = jsonObject.optDouble(NameParseUrl.VOTE_AVERAGE, 0);
-            mPostPath = jsonObject.optString(NameParseUrl.POST_PATH, null);
-            mFirstAirDate = jsonObject.optString(NameParseUrl.FIRST_AIR_DATE, null);
-            mReleaseDate = jsonObject.optString(NameParseUrl.RELEASE_DATE, null);
-        } catch (Exception e) {
-            e.getMessage();
-        }
     }
 
     public @interface NameParseUrl {

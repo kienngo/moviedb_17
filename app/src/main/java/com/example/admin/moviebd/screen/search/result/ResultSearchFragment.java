@@ -73,7 +73,7 @@ public class ResultSearchFragment extends BaseFragment implements ResultSearchCo
     }
 
     private void initView() {
-        mSearchResults = mSearchActivity.findViewById(R.id.recycler_search_result);
+        mSearchResults = mSearchActivity.findViewById(R.id.recycler_search);
         mDialogLoading = mSearchActivity.findViewById(R.id.dialog_loading);
     }
 

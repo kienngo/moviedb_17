@@ -61,8 +61,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             this.mOnMovieItemClickListener = onMovieItemClickListener;
             mImageMovie = itemView.findViewById(R.id.image_movie);
             mImageOption = itemView.findViewById(R.id.image_option);
-            mTextTitleMovie = itemView.findViewById(R.id.textview_title_movie);
-            mTextVoteAverage = itemView.findViewById(R.id.textview_vote_average);
+            mTextTitleMovie = itemView.findViewById(R.id.text_title);
+            mTextVoteAverage = itemView.findViewById(R.id.text_vote_average);
             mImageOption.setOnClickListener(this);
         }
 

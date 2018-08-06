@@ -47,6 +47,7 @@ public class SearchResultRemoteDataSource implements SearchResultDataSource {
                     callback.onGetSuccess(searchResults);
                 } catch (JSONException e) {
                     callback.onGetFailure(e);
+                    throw new RuntimeException(e);
                 }
             }
 
