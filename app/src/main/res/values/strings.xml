@@ -6,7 +6,7 @@
     <string name="icon_menu">Icon Menu</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="search">Search</string>
+    <string name="searchParameter">Search</string>
     <string name="movie">Movie</string>
     <string name="television">Television</string>
     <string name="people">People</string>
@@ -21,5 +21,34 @@
     <string name="company">Framgia Edu</string>
     <string name="movie_top_rated">Movie Top Rated</string>
     <string name="movie_upcoming">Movie Upcoming</string>
-    <string name="add_facorites">Thêm vào yêu thích</string>
+    <string name="add_facorites">Add to Favorites</string>
+    <string name="input_keyword">Enter keywords</string>
+    <string name="voice">Voice</string>
+    <string name="search_movie">Search Movie</string>
+    <string name="search_television">Search Television</string>
+    <string name="multi_search">Multi Search</string>
+    <string name="hr_horizontal">-</string>
+    <string name="keyword_selection">Keyword selection</string>
+    <string name="star">%.1f *</string>
+    <string name="release_date">Release Date : %s</string>
+    <string name="first_air_date">First Air Date : %s</string>
+    <string name="speech_prompt">Speak</string>
+    <string-array name="sort_by">
+        <item>popularity.asc</item>
+        <item>popularity.desc</item>
+        <item>release_date.asc</item>
+        <item>release_date.desc</item>
+        <item>vote_count.asc</item>
+        <item>vote_count.desc</item>
+    </string-array>
+    <string-array name="year">
+        <item>2018</item>
+        <item>2017</item>
+        <item>2016</item>
+        <item>2015</item>
+        <item>2014</item>
+        <item>2013</item>
+        <item>2012</item>
+        <item>2011</item>
+    </string-array>
 </resources>

@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--Style theme Edittext SearchParameter-->
+    <style name="EdittextSearch">
+        <item name="android:inputType">text</item>
+        <item name="android:imeOptions">actionSearch</item>
+        <item name="android:backgroundTint">@color/color_transparent</item>
+    </style>
 </resources>
