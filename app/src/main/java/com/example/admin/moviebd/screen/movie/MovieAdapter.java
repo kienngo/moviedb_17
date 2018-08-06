@@ -1,5 +1,6 @@
 package com.example.admin.moviebd.screen.movie;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,8 +19,10 @@ import java.util.List;
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
     private List<Movie> mMovies;
     private OnMovieItemClickListener mOnMovieItemClickListener;
+    private Context mContext;
 
-    public MovieAdapter(List<Movie> movies, OnMovieItemClickListener onMovieItemClickListener) {
+    public MovieAdapter(Context context, List<Movie> movies, OnMovieItemClickListener onMovieItemClickListener) {
+        this.mContext = context;
         this.mMovies = movies;
         this.mOnMovieItemClickListener = onMovieItemClickListener;
     }
@@ -36,6 +39,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Movie movie = mMovies.get(position);
         holder.mTextTitleMovie.setText(movie.getTitleVideo());
+        holder.mTextVoteAverage.setText(mContext.getString(R.string.star, movie.getVoteAverage()));
         Picasso.get().load(String.format(Constants.BaseApiUrl.IMAGE_URL, movie.getPosterPath())).
                 into(holder.mImageMovie);
     }
@@ -47,7 +51,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
     static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private ImageView mImageMovie, mImageOption;
-        private TextView mTextTitleMovie;
+        private TextView mTextTitleMovie, mTextVoteAverage;
         private List<Movie> mMovies;
         private OnMovieItemClickListener mOnMovieItemClickListener;
 
@@ -58,6 +62,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             mImageMovie = itemView.findViewById(R.id.image_movie);
             mImageOption = itemView.findViewById(R.id.image_option);
             mTextTitleMovie = itemView.findViewById(R.id.textview_title_movie);
+            mTextVoteAverage = itemView.findViewById(R.id.textview_vote_average);
             mImageOption.setOnClickListener(this);
         }
 

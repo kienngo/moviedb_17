@@ -2,7 +2,7 @@ package com.example.admin.moviebd.screen.movie;
 
 import com.example.admin.moviebd.data.model.Movie;
 import com.example.admin.moviebd.data.source.MovieDataSource;
-import com.example.admin.moviebd.data.source.MovieRepository;
+import com.example.admin.moviebd.data.source.repository.MovieRepository;
 import com.example.admin.moviebd.utils.Constants;
 import com.example.admin.moviebd.utils.common.StringUtils;
 
@@ -40,14 +40,14 @@ public class MoviePresenter implements MovieContract.Presenter {
             public void onGetFailure(Exception exception) {
                 // TODO: 8/3/2018 get the next data about movie nowplaying when get movie popular failure
                 mView.onFailed(exception, POPULAR_MOVIE);
-                getMovieNowplayingFromApi(StringUtils.formatStringUrl(Constants.FINAL_API_MOVIE,
+                getMovieNowplayingFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
                         Constants.ApiAddContent.MOVIE_NOWPLAYING, PAGE_DEFAULT));
             }
 
             @Override
             public void onComplete() {
                 // TODO: 8/3/2018 get the next data about movie nowplaying when get movie popular complete
-                getMovieNowplayingFromApi(StringUtils.formatStringUrl(Constants.FINAL_API_MOVIE,
+                getMovieNowplayingFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
                         Constants.ApiAddContent.MOVIE_NOWPLAYING, PAGE_DEFAULT));
             }
         });
@@ -69,13 +69,13 @@ public class MoviePresenter implements MovieContract.Presenter {
             @Override
             public void onGetFailure(Exception exception) {
                 mView.onFailed(exception, NOW_PLAYING_MOVIE);
-                getMovieTopRatedFromApi(StringUtils.formatStringUrl(Constants.FINAL_API_MOVIE,
+                getMovieTopRatedFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
                         Constants.ApiAddContent.MOVIE_TOP_RATED, PAGE_DEFAULT));
             }
 
             @Override
             public void onComplete() {
-                getMovieTopRatedFromApi(StringUtils.formatStringUrl(Constants.FINAL_API_MOVIE,
+                getMovieTopRatedFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
                         Constants.ApiAddContent.MOVIE_TOP_RATED, PAGE_DEFAULT));
             }
         });
@@ -97,13 +97,13 @@ public class MoviePresenter implements MovieContract.Presenter {
             @Override
             public void onGetFailure(Exception exception) {
                 mView.onFailed(exception, TOP_RATED_MOVIE);
-                getMovieUpcomingFromApi(StringUtils.formatStringUrl(Constants.FINAL_API_MOVIE,
+                getMovieUpcomingFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
                         Constants.ApiAddContent.MOVIE_UPCOMING, PAGE_DEFAULT));
             }
 
             @Override
             public void onComplete() {
-                getMovieUpcomingFromApi(StringUtils.formatStringUrl(Constants.FINAL_API_MOVIE,
+                getMovieUpcomingFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
                         Constants.ApiAddContent.MOVIE_UPCOMING, PAGE_DEFAULT));
             }
         });

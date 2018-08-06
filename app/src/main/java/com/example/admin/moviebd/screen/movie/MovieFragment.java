@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
-import android.widget.Toast;
 
 import com.example.admin.moviebd.Injection;
 import com.example.admin.moviebd.R;
@@ -61,7 +60,7 @@ public class MovieFragment extends BaseFragment implements MovieContract.View, M
     public void onStart() {
         super.onStart();
         initView();
-        mMoviePresenter.getMoviePopularFromApi(StringUtils.formatStringUrl(Constants.FINAL_API_MOVIE,
+        mMoviePresenter.getMoviePopularFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
                 Constants.ApiAddContent.MOVIE_POPULAR, PAGE_DEFAULT));
     }
 
@@ -87,7 +86,7 @@ public class MovieFragment extends BaseFragment implements MovieContract.View, M
     }
 
     private void showDataMovie(List<Movie> movies, RecyclerView recyclerView) {
-        MovieAdapter mMovieAdapter = new MovieAdapter(movies, this);
+        MovieAdapter mMovieAdapter = new MovieAdapter(mMainActivity, movies, this);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(mMainActivity,
                 LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(layoutManager);
@@ -130,7 +129,7 @@ public class MovieFragment extends BaseFragment implements MovieContract.View, M
 
     @Override
     public void onItemClick(int movieId) {
-        
+
     }
 
     @Override

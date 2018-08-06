@@ -22,7 +22,11 @@ public class StringUtils {
         return sb.toString();
     }
 
-    public static String formatStringUrl(String apiLink, String contentApi, int pageDefault) {
+    public static String formatStringMovieUrl(String apiLink, String contentApi, int pageDefault) {
         return String.format(Locale.getDefault(), apiLink, contentApi, pageDefault);
+    }
+
+    public static String formatStringSearchUrl(String apiLink, String contentApi, String query, int pageDefault) {
+        return String.format(Locale.getDefault(), apiLink, contentApi, query, pageDefault);
     }
 }
