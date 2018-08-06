@@ -5,17 +5,7 @@ import com.example.admin.moviebd.data.model.Movie;
 
 import java.util.List;
 
-public interface MovieDataSource {
-    interface Callback<T> {
-        void onStartLoading();
-
-        void onGetSuccess(T data);
-
-        void onGetFailure(Exception exeption);
-
-        void onComplete();
-    }
-
+public interface MovieDataSource extends BaseDataSource {
     /*
     urlType : popular or nowplaying or top rated or upcoming
      */

@@ -6,12 +6,12 @@ import java.io.Serializable;
 
 public class Movie implements Serializable {
     private int mId;
-    private int mVoteAverage;
+    private double mVoteAverage;
     private String mTitleVideo;
     private String mPosterPath;
     private String mReleaseDate;
 
-    public Movie(int id, int voteAverage, String titleVideo, String posterPath, String releaseDate) {
+    public Movie(int id, double voteAverage, String titleVideo, String posterPath, String releaseDate) {
         mId = id;
         mVoteAverage = voteAverage;
         mTitleVideo = titleVideo;
@@ -27,11 +27,11 @@ public class Movie implements Serializable {
         mId = id;
     }
 
-    public int getVoteAverage() {
+    public double getVoteAverage() {
         return mVoteAverage;
     }
 
-    public void setVoteAverage(int voteAverage) {
+    public void setVoteAverage(double voteAverage) {
         mVoteAverage = voteAverage;
     }
 
@@ -62,7 +62,7 @@ public class Movie implements Serializable {
     public Movie(JSONObject jsonObject) {
         try {
             mId = jsonObject.optInt(NameParseUrl.ID, 0);
-            mVoteAverage = jsonObject.optInt(NameParseUrl.VOTE_AVERAGE, 0);
+            mVoteAverage = jsonObject.optDouble(NameParseUrl.VOTE_AVERAGE, 0);
             mTitleVideo = jsonObject.optString(NameParseUrl.TITLE, null);
             mPosterPath = jsonObject.optString(NameParseUrl.POSTER_PATH, null);
             mReleaseDate = jsonObject.optString(NameParseUrl.RELEASE_DATE, null);

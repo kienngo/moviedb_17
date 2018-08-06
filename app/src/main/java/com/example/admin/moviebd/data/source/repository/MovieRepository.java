@@ -1,5 +1,6 @@
-package com.example.admin.moviebd.data.source;
+package com.example.admin.moviebd.data.source.repository;
 
+import com.example.admin.moviebd.data.source.BaseDataSource;
 import com.example.admin.moviebd.data.source.remote.MovieRemoteDataSource;
 
 public class MovieRepository {
@@ -17,7 +18,7 @@ public class MovieRepository {
         return sInstance;
     }
 
-    public void getMovieFromApi(String url, MovieDataSource.Callback callback) {
+    public void getMovieFromApi(String url, BaseDataSource.Callback callback) {
         mMovieRemoteDataSource.getMoviesCommon(url, callback);
     }
 }
