@@ -29,4 +29,12 @@ public class StringUtils {
     public static String formatStringSearchUrl(String apiLink, String contentApi, String query, int pageDefault) {
         return String.format(Locale.getDefault(), apiLink, contentApi, query, pageDefault);
     }
+
+    public static String formatStringGenresUrl(String apiLink, String contentApi) {
+        return String.format(Locale.getDefault(), apiLink, contentApi);
+    }
+
+    public static String formatStringSearchGenresUrl(String apiLink, String contentApi, String query, int pageDefault) {
+        return String.format(Locale.getDefault(), apiLink, contentApi, query, pageDefault);
+    }
 }
