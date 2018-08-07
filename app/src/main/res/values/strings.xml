@@ -10,7 +10,7 @@
     <string name="movie">Movie</string>
     <string name="television">Television</string>
     <string name="people">People</string>
-    <string name="genres">Genres</string>
+    <string name="genre">Genres</string>
     <string name="changes_24h">Changes 24h</string>
     <string name="notification">Information</string>
     <string name="rate">Rate</string>
@@ -33,8 +33,8 @@
     <string name="release_date">Release Date : %s</string>
     <string name="first_air_date">First Air Date : %s</string>
     <string name="speech_prompt">Speak</string>
-    <string name="toolbar_movie_genres_title">Movie genres</string>
-    <string name="toolbar_television_genres_title">Television genres</string>
+    <string name="toolbar_movie_genres_title">Movie genre</string>
+    <string name="toolbar_television_genres_title">Television genre</string>
     <string name="comma">,</string>
     <string-array name="sort_by">
         <item>popularity.asc</item>
@@ -64,4 +64,5 @@
     <string name="trailers">Trailers</string>
     <string name="error">Error!</string>
     <string name="filter_search">Lọc tìm kiếm</string>
+    <string name="please_select_genre">Please select genre</string>
 </resources>

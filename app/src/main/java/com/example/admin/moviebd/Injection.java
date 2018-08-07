@@ -40,4 +40,10 @@ public class Injection {
                 GenresRemoteOptionDataSource.getInstance()
         );
     }
+
+    public GenresResultRepository getGenresResultRepository() {
+        return GenresResultRepository.getInstance(
+                GenresRemoteResultDataSouce.getInstance()
+        );
+    }
 }
