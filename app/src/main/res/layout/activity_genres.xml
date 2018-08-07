@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_genres"
+        style="@style/ToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:contentInsetStart="0dp"
+        app:titleTextColor="@color/color_white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_back"
+                style="@style/ImageViewTitleApp"
+                android:contentDescription="@string/content_description_image"
+                android:src="@drawable/ic_back_white" />
+
+            <TextView
+                android:id="@+id/text_title"
+                style="@style/TextViewTitleApp"
+                android:layout_toEndOf="@+id/image_back" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+        android:id="@+id/layout_genres"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
