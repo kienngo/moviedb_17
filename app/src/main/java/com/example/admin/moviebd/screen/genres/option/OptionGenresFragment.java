@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.admin.moviebd.Injection;
 import com.example.admin.moviebd.R;
@@ -110,7 +111,13 @@ public class OptionGenresFragment extends BaseFragment implements View.OnClickLi
                 strGenres.append(getString(R.string.comma));
             }
         }
-        mGenresActivity.replaceFragment(ResultGenresFragment.newInstance(
-                strGenres.toString().substring(0, strGenres.toString().length() - LAST_ELEMENT)));
+
+        if (strGenres.length() > 0) {
+            mGenresActivity.replaceFragment(ResultGenresFragment.newInstance(
+                    strGenres.toString().substring(0, strGenres.toString().length()
+                            - LAST_ELEMENT)));
+        } else {
+            Toast.makeText(mGenresActivity, getString(R.string.please_select_genre), Toast.LENGTH_SHORT).show();
+        }
     }
 }

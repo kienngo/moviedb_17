@@ -119,7 +119,7 @@
         <item name="android:layout_marginTop">@dimen/dp_10</item>
     </style>
 
-    <!--Style Button Search Genres-->
+    <!--Style Button Search Genre-->
     <style name="ButtonSearch">
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:background">@drawable/button_search_genres</item>
