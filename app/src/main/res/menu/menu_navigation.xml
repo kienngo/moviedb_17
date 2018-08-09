@@ -4,7 +4,7 @@
     <item
         android:id="@+id/action_genres"
         android:icon="@drawable/ic_genres"
-        android:title="@string/genres" />
+        android:title="@string/genre" />
     <item
         android:id="@+id/action_changes"
         android:icon="@drawable/ic_changes"

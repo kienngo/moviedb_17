@@ -14,8 +14,8 @@
     <string name="changes_24h">Changes 24h</string>
     <string name="notification">Information</string>
     <string name="rate">Rate</string>
-    <string name="movie_popular">Movie popular</string>
-    <string name="movie_now_playing">Movie now playing</string>
+    <string name="movie_popular">Movie Popular</string>
+    <string name="movie_now_playing">Movie Now Playing</string>
     <string name="loading_data">Loading data  &#8230;</string>
     <string name="admin">Admin</string>
     <string name="company">Framgia Edu</string>
@@ -65,4 +65,5 @@
     <string name="error">Error!</string>
     <string name="filter_search">Lọc tìm kiếm</string>
     <string name="please_select_genre">Please select genre</string>
+    <string name="data_loading_more">List data for movie</string>
 </resources>

@@ -32,6 +32,7 @@
                         android:text="@string/movie_popular" />
 
                     <TextView
+                        android:id="@+id/text_more_popular"
                         style="@style/TextViewMoreCardView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -62,6 +63,7 @@
                         android:text="@string/movie_now_playing" />
 
                     <TextView
+                        android:id="@+id/text_more_now_playing"
                         style="@style/TextViewMoreCardView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -92,6 +94,7 @@
                         android:text="@string/movie_top_rated" />
 
                     <TextView
+                        android:id="@+id/text_more_top_rated"
                         style="@style/TextViewMoreCardView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
@@ -121,6 +124,7 @@
                         android:text="@string/movie_upcoming" />
 
                     <TextView
+                        android:id="@+id/text_more_upcoming"
                         style="@style/TextViewMoreCardView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
