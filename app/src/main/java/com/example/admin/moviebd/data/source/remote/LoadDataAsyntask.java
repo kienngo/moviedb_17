@@ -2,8 +2,9 @@ package com.example.admin.moviebd.data.source.remote;
 
 import android.os.AsyncTask;
 
+import com.example.admin.moviebd.data.source.BaseDataSource;
 import com.example.admin.moviebd.data.source.MovieDataSource;
-import com.example.admin.moviebd.utils.Constants;
+import com.example.admin.moviebd.utils.Constant;
 import com.example.admin.moviebd.utils.common.StringUtils;
 
 import java.io.BufferedInputStream;
@@ -13,9 +14,9 @@ import java.net.URL;
 
 public class LoadDataAsyntask extends AsyncTask<String, String, String> {
     private Exception mException;
-    private MovieDataSource.Callback mCallback;
+    private BaseDataSource.Callback mCallback;
 
-    public LoadDataAsyntask(MovieDataSource.Callback callback) {
+    public LoadDataAsyntask(BaseDataSource.Callback callback) {
         this.mCallback = callback;
     }
 
@@ -31,7 +32,7 @@ public class LoadDataAsyntask extends AsyncTask<String, String, String> {
         try {
             URL url = new URL(strings[0]);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod(Constants.BaseApiUrl.METHOD_REQUEST_API);
+            conn.setRequestMethod(Constant.BaseApiUrl.METHOD_REQUEST_API);
             InputStream in = new BufferedInputStream(conn.getInputStream());
             response = StringUtils.convertStreamToString(in);
         } catch (Exception e) {

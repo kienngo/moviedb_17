@@ -4,7 +4,7 @@
     android:layout_height="@dimen/dp_40">
 
     <TextView
-        android:id="@+id/text_nameTrailer"
+        android:id="@+id/text_trailer_name"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/dp_8dp"
