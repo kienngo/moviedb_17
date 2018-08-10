@@ -11,6 +11,9 @@ public class Movie implements Serializable {
     private String mPosterPath;
     private String mReleaseDate;
 
+    public Movie() {
+    }
+
     public Movie(int id, double voteAverage, String titleVideo, String posterPath, String releaseDate) {
         mId = id;
         mVoteAverage = voteAverage;
