@@ -57,6 +57,7 @@
         <item name="android:textSize">@dimen/sp_15</item>
         <item name="android:paddingLeft">@dimen/dp_16</item>
         <item name="android:paddingTop">@dimen/dp_16</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <!--Style for Textview More in Cardview-->

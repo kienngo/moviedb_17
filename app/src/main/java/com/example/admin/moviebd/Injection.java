@@ -1,7 +1,6 @@
 package com.example.admin.moviebd;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 
 import com.example.admin.moviebd.data.source.local.MovieLocalDataSource;
 import com.example.admin.moviebd.data.source.remote.GenresRemoteOptionDataSource;
@@ -37,7 +36,8 @@ public class Injection {
 
     public SearchResultRepository getSearchResultRepository() {
         return SearchResultRepository.getInstance(
-                SearchResultRemoteDataSource.getInstance()
+                SearchResultRemoteDataSource.getInstance(),
+                MovieLocalDataSource.getInstance(mContext)
         );
     }
 
@@ -49,7 +49,8 @@ public class Injection {
 
     public GenresResultRepository getGenresResultRepository() {
         return GenresResultRepository.getInstance(
-                GenresRemoteResultDataSouce.getInstance()
+                GenresRemoteResultDataSouce.getInstance(),
+                MovieLocalDataSource.getInstance(mContext)
         );
     }
 

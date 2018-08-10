@@ -6,9 +6,9 @@
         android:icon="@drawable/ic_genres"
         android:title="@string/genre" />
     <item
-        android:id="@+id/action_changes"
+        android:id="@+id/action_favorite"
         android:icon="@drawable/ic_changes"
-        android:title="@string/changes_24h"
+        android:title="@string/favorites"
         app:actionViewClass="android.widget.TextView" />
     <item android:title="@string/setting">
         <menu>

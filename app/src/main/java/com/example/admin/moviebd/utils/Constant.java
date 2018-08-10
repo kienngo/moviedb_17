@@ -3,6 +3,8 @@ package com.example.admin.moviebd.utils;
 import com.example.admin.moviebd.BuildConfig;
 
 public class Constant {
+    public static final int SIZE_START = 20;
+    public static final int COUNT = 1;
     public static class BaseApiUrl {
         public static final String METHOD_REQUEST_API = "GET";
         public static final String API_URL = "https://api.themoviedb.org/3/";

@@ -33,7 +33,7 @@
     <string name="release_date">Release Date : %s</string>
     <string name="first_air_date">First Air Date : %s</string>
     <string name="speech_prompt">Speak</string>
-    <string name="toolbar_movie_genres_title">Movie genre</string>
+    <string name="toolbar_movie_genres_title">Movie selection</string>
     <string name="toolbar_television_genres_title">Television genre</string>
     <string name="comma">,</string>
     <string-array name="sort_by">
@@ -63,8 +63,16 @@
     <string name="created_by">Featured Crew</string>
     <string name="trailers">Trailers</string>
     <string name="error">Error!</string>
-    <string name="filter_search">Lọc tìm kiếm</string>
+    <string name="filter_search">Search filter</string>
     <string name="please_select_genre">Please select genre</string>
-    <string name="data_loading_more">List data for movie</string>
     <string name="companies">Companies</string>
+    <string name="data_loading_more">See more list</string>
+    <string name="favorites">Favorites</string>
+    <string name="title_favorites">Favorites</string>
+    <string name="add_movie_success">Add movie success</string>
+    <string name="exits_movie">Exits movie</string>
+    <string name="delete_movie">Delete movie</string>
+    <string name="not_delete_movie_success">Not delete movie</string>
+    <string name="deverlopping">Deverlopping</string>
+    <string name="goto_favorites">Go to favorites</string>
 </resources>
