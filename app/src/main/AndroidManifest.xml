@@ -3,6 +3,7 @@
     package="com.example.admin.moviebd">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MainApplication"
         android:allowBackup="true"
@@ -18,16 +19,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".screen.search.SearchActivity"
             android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".screen.detail_tv.DetailActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".screen.trailer.TrailerActivity"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
+        <activity android:name=".screen.detail_movie.MovieDetailActivity" />
     </application>
-
 </manifest>

@@ -6,9 +6,11 @@ import android.support.annotation.NonNull;
 import com.example.admin.moviebd.data.source.local.MovieLocalDataSource;
 import com.example.admin.moviebd.data.source.remote.GenresRemoteOptionDataSource;
 import com.example.admin.moviebd.data.source.remote.GenresRemoteResultDataSouce;
+import com.example.admin.moviebd.data.source.remote.MovieInforRemoteDataSource;
 import com.example.admin.moviebd.data.source.remote.SearchResultRemoteDataSource;
 import com.example.admin.moviebd.data.source.repository.GenresOptionRepository;
 import com.example.admin.moviebd.data.source.repository.GenresResultRepository;
+import com.example.admin.moviebd.data.source.repository.MovieDetailRepository;
 import com.example.admin.moviebd.data.source.repository.MovieRepository;
 import com.example.admin.moviebd.data.source.remote.MovieRemoteDataSource;
 import com.example.admin.moviebd.data.source.repository.SearchResultRepository;
@@ -48,6 +50,12 @@ public class Injection {
     public GenresResultRepository getGenresResultRepository() {
         return GenresResultRepository.getInstance(
                 GenresRemoteResultDataSouce.getInstance()
+        );
+    }
+
+    public MovieDetailRepository getMovieDetailRepository() {
+        return MovieDetailRepository.getInstance(
+                MovieInforRemoteDataSource.getInstance()
         );
     }
 }
