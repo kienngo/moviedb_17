@@ -1,17 +1,20 @@
 package com.example.admin.moviebd.screen.movies;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.admin.moviebd.Injection;
 import com.example.admin.moviebd.R;
 import com.example.admin.moviebd.data.model.Movie;
 import com.example.admin.moviebd.screen.BaseActivity;
 import com.example.admin.moviebd.screen.RecyclerViewScrollListener;
+import com.example.admin.moviebd.screen.favorites.FavoritesActivity;
 import com.example.admin.moviebd.utils.Constant;
 import com.example.admin.moviebd.utils.common.StringUtils;
 
@@ -25,12 +28,13 @@ public class MoviesActivity extends BaseActivity implements MoviesContract.View,
         MoviesAdapter.OnMovieItemClickListener {
     private RecyclerView mMovieLoadMore;
     private Toolbar mToolbarLoadMore;
+    private LinearLayoutManager mLinearLayoutManager;
     private MoviesAdapter mMoviesAdapter;
     private List<Movie> mMovies;
+    private RecyclerViewScrollListener mRecyclerViewScrollListener;
+    private MoviesPresenter mMoviesPresenter;
     private String mUrlContent;
     private int mCurrentPage;
-    private LinearLayoutManager mLinearLayoutManager;
-    private RecyclerViewScrollListener mRecyclerViewScrollListener;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,6 +52,8 @@ public class MoviesActivity extends BaseActivity implements MoviesContract.View,
         mMovies = new ArrayList<>();
         mMovies = (List<Movie>) getIntent().getSerializableExtra(EXTRA_MOVIE_LIST);
         mUrlContent = getIntent().getStringExtra(EXTRA_MOVIE_URL);
+        mMoviesPresenter = new MoviesPresenter(this,
+                Injection.getInstance(this).getMovieRepository());
     }
 
     private void initView() {
@@ -57,11 +63,13 @@ public class MoviesActivity extends BaseActivity implements MoviesContract.View,
 
     private void setToolbar() {
         mToolbarLoadMore.setTitle(R.string.data_loading_more);
+        mToolbarLoadMore.setNavigationIcon(R.drawable.ic_back_white);
         setSupportActionBar(mToolbarLoadMore);
     }
 
     private void showData() {
-        mMoviesAdapter = new MoviesAdapter(this, mMovies, this);
+        mMoviesAdapter = new MoviesAdapter(this, mMovies,
+                this, mMoviesPresenter);
         mLinearLayoutManager = new LinearLayoutManager(this,
                 LinearLayoutManager.VERTICAL, false);
         mMovieLoadMore.setLayoutManager(mLinearLayoutManager);
@@ -73,7 +81,8 @@ public class MoviesActivity extends BaseActivity implements MoviesContract.View,
             @Override
             public void onLoadMore(int page) {
                 mCurrentPage = page;
-                loadMoreDataMovie(StringUtils.formatStringMovieUrl(Constant.FINAL_API_MOVIE, mUrlContent, mCurrentPage));
+                loadMoreDataMovie(StringUtils.formatStringMovieUrl(
+                        Constant.FINAL_API_MOVIE, mUrlContent, mCurrentPage));
             }
         };
         mMovieLoadMore.addOnScrollListener(mRecyclerViewScrollListener);
@@ -81,7 +90,7 @@ public class MoviesActivity extends BaseActivity implements MoviesContract.View,
 
     private void loadMoreDataMovie(String url) {
         MoviesPresenter mMoviesPresenter = new MoviesPresenter(this,
-                Injection.getInstance().getMovieRepository());
+                Injection.getInstance(this).getMovieRepository());
         mMoviesPresenter.getMovieLoadMore(url);
     }
 
@@ -98,6 +107,7 @@ public class MoviesActivity extends BaseActivity implements MoviesContract.View,
 
     @Override
     public void onFailed(Exception exception) {
+
     }
 
     @Override
@@ -107,12 +117,28 @@ public class MoviesActivity extends BaseActivity implements MoviesContract.View,
 
     @Override
     public void onOptionClickListener(Movie movie) {
-
+        StringUtils.checkInsertMovie(this, mMoviesPresenter.insertMovieLocal(movie));
+        mMoviesAdapter.notifyDataSetChanged();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_goto_favorites, menu);
         return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                break;
+            case R.id.action_goto_favorites:
+                Intent intentFavorites = new Intent(this, FavoritesActivity.class);
+                startActivity(intentFavorites);
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

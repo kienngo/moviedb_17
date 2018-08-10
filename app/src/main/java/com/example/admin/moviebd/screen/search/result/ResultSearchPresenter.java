@@ -1,5 +1,6 @@
 package com.example.admin.moviebd.screen.search.result;
 
+import com.example.admin.moviebd.data.model.Movie;
 import com.example.admin.moviebd.data.model.SearchResult;
 import com.example.admin.moviebd.data.source.SearchResultDataSource;
 import com.example.admin.moviebd.data.source.repository.SearchResultRepository;
@@ -10,7 +11,8 @@ public class ResultSearchPresenter implements ResultSearchContact.Presenter {
     private ResultSearchContact.View mView;
     private SearchResultRepository mSearchResultRepository;
 
-    public ResultSearchPresenter(ResultSearchContact.View view, SearchResultRepository searchResultRepository) {
+    public ResultSearchPresenter(ResultSearchContact.View view,
+                                 SearchResultRepository searchResultRepository) {
         this.mView = view;
         this.mSearchResultRepository = searchResultRepository;
     }
@@ -38,5 +40,19 @@ public class ResultSearchPresenter implements ResultSearchContact.Presenter {
                 mView.onDismissLoading();
             }
         });
+    }
+
+    @Override
+    public boolean insertMovieLocal(Movie movie) {
+        if (isFavoritesLocal(String.valueOf(movie.getId()))) {
+            return false;
+        } else {
+            return mSearchResultRepository.insertMovie(movie);
+        }
+    }
+
+    @Override
+    public boolean isFavoritesLocal(String movieId) {
+        return mSearchResultRepository.isFavouriteMovie(movieId);
     }
 }

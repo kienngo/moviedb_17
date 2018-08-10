@@ -16,10 +16,7 @@ import com.example.admin.moviebd.data.model.Genres;
 import com.example.admin.moviebd.data.model.MovieInformation;
 import com.example.admin.moviebd.data.model.MovieRecommendation;
 import com.example.admin.moviebd.data.model.ProductionCompany;
-import com.example.admin.moviebd.data.model.Recommendation;
 import com.example.admin.moviebd.data.model.Trailer;
-import com.example.admin.moviebd.screen.detail_tv.DetailActivity;
-import com.example.admin.moviebd.screen.detail_tv.RecommendationAdapter;
 import com.example.admin.moviebd.screen.detail_tv.TrailerAdapter;
 import com.example.admin.moviebd.screen.trailer.TrailerActivity;
 import com.example.admin.moviebd.utils.Constant;
@@ -45,7 +42,7 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
         setLayoutRecycler();
         mIdMovie = getIntent().getIntExtra(Constant.BaseApiUrl.ID_MOVIE, 353081);
         mDetailPresenter = new MovieDetailPresenter(this,
-                Injection.getInstance().getMovieDetailRepository());
+                Injection.getInstance(this).getMovieDetailRepository());
     }
 
     @Override

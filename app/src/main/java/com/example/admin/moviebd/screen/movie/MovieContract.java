@@ -17,5 +17,7 @@ public interface MovieContract {
         void getMovieNowplayingFromApi(String url);
         void getMovieTopRatedFromApi(String url);
         void getMovieUpcomingFromApi(String url);
+        boolean insertMovieLocal(Movie movie);
+        boolean isFavoritesLocal(String movieId);
     }
 }

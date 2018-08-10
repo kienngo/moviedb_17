@@ -2,6 +2,7 @@ package com.example.admin.moviebd.data.source.remote;
 
 
 import com.example.admin.moviebd.data.model.Movie;
+import com.example.admin.moviebd.data.source.BaseDataSource;
 import com.example.admin.moviebd.data.source.MovieDataSource;
 
 import org.json.JSONArray;
@@ -11,7 +12,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieRemoteDataSource implements MovieDataSource {
+public class MovieRemoteDataSource implements MovieDataSource.RemoteDataSource {
     private static MovieRemoteDataSource sInstance;
 
     private MovieRemoteDataSource() {
@@ -26,18 +27,18 @@ public class MovieRemoteDataSource implements MovieDataSource {
     }
 
     @Override
-    public void getMoviesCommon(String url, final Callback<List<Movie>> callback) {
-        new LoadDataAsyntask(new Callback<String>() {
+    public void getMoviesCommon(String url, final BaseDataSource.Callback<List<Movie>> callback) {
+        new LoadDataAsyntask(new BaseDataSource.Callback() {
             @Override
             public void onStartLoading() {
                 callback.onStartLoading();
             }
 
             @Override
-            public void onGetSuccess(String data) {
+            public void onGetSuccess(Object data) {
                 List<Movie> movies = new ArrayList<>();
                 try {
-                    JSONObject jsonObject = new JSONObject(data);
+                    JSONObject jsonObject = new JSONObject((String) data);
                     JSONArray jsonArray = jsonObject.getJSONArray(Movie.NameParseUrl.RESULTS);
 
                     for (int i = 0; i < jsonArray.length(); i++) {
@@ -50,6 +51,7 @@ public class MovieRemoteDataSource implements MovieDataSource {
                     callback.onGetFailure(e);
                 }
             }
+
 
             @Override
             public void onGetFailure(Exception exception) {

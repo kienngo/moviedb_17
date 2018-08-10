@@ -29,8 +29,8 @@ public class OptionGenresFragment extends BaseFragment implements View.OnClickLi
     private LinearLayout mLinearLoading;
     private RecyclerView mGenres;
     private Button mButtonSearch;
-    private GenresActivity mGenresActivity;
     private List<Genre> mListGenres;
+    private GenresActivity mGenresActivity;
 
     public static OptionGenresFragment newInstance() {
         OptionGenresFragment optionGenresFragment = new OptionGenresFragment();
@@ -71,7 +71,7 @@ public class OptionGenresFragment extends BaseFragment implements View.OnClickLi
 
     private void getData() {
         OptionGenresPresenter mOptionGenresPresenter = new OptionGenresPresenter(this,
-                Injection.getInstance().getGenresRepository());
+                Injection.getInstance(mGenresActivity).getGenresRepository());
         mOptionGenresPresenter.getGenresFromApi(StringUtils.formatStringGenresUrl(
                 Constant.FINAL_API_GENRES, Constant.ApiAddContent.GENRES_MOVIE));
     }

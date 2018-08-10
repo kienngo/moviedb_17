@@ -1,5 +1,6 @@
 package com.example.admin.moviebd.screen.search.result;
 
+import com.example.admin.moviebd.data.model.Movie;
 import com.example.admin.moviebd.data.model.SearchResult;
 
 import java.util.List;
@@ -14,5 +15,7 @@ public interface ResultSearchContact {
 
     interface Presenter{
         void getDataSearchFromUrl(String url);
+        boolean insertMovieLocal(Movie movie);
+        boolean isFavoritesLocal(String movieId);
     }
 }

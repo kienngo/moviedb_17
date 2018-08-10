@@ -40,4 +40,18 @@ public class MoviesPresenter implements MoviesContract.Presenter {
             }
         });
     }
+
+    @Override
+    public boolean insertMovieLocal(Movie movie) {
+        if (isFavoritesLocal(String.valueOf(movie.getId()))){
+            return false;
+        }else{
+            return mMovieRepository.insertMovie(movie);
+        }
+    }
+
+    @Override
+    public boolean isFavoritesLocal(String movieId) {
+        return mMovieRepository.isFavouriteMovie(movieId);
+    }
 }

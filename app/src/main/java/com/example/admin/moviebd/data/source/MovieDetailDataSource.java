@@ -4,7 +4,6 @@ import com.example.admin.moviebd.data.model.Genres;
 import com.example.admin.moviebd.data.model.MovieInformation;
 import com.example.admin.moviebd.data.model.MovieRecommendation;
 import com.example.admin.moviebd.data.model.ProductionCompany;
-import com.example.admin.moviebd.data.model.Recommendation;
 import com.example.admin.moviebd.data.model.Trailer;
 
 import java.util.List;

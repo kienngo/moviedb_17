@@ -40,4 +40,18 @@ public class ResultGenresPresenter implements ResultGenresContract.Presenter {
             }
         });
     }
+
+    @Override
+    public boolean insertMovieLocal(Movie movie) {
+        if (isFavoritesLocal(String.valueOf(movie.getId()))){
+            return false;
+        }else{
+            return mGenresResultRepository.insertMovie(movie);
+        }
+    }
+
+    @Override
+    public boolean isFavoritesLocal(String movieId) {
+        return mGenresResultRepository.isFavouriteMovie(movieId);
+    }
 }

@@ -14,5 +14,7 @@ public interface MoviesContract {
 
     interface Presenter{
         void getMovieLoadMore(String url);
+        boolean insertMovieLocal(Movie movie);
+        boolean isFavoritesLocal(String movieId);
     }
 }

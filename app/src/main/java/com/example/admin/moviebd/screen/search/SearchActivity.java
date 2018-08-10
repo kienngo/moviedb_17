@@ -26,16 +26,17 @@ import com.example.admin.moviebd.screen.search.result.ResultSearchFragment;
 import java.util.ArrayList;
 import java.util.Locale;
 
-import static com.example.admin.moviebd.screen.search.SearchCondition.MULTI_SEARCH;
-import static com.example.admin.moviebd.screen.search.SearchCondition.SEARCH_MOVIE;
-import static com.example.admin.moviebd.screen.search.SearchCondition.SEARCH_TELEVISION;
+import static com.example.admin.moviebd.utils.Constant.ApiAddContent.SEARCH_MOVIE;
+import static com.example.admin.moviebd.utils.Constant.ApiAddContent.SEARCH_MULTI;
+import static com.example.admin.moviebd.utils.Constant.ApiAddContent.SEARCH_TELEVISION;
 
 
-public class SearchActivity extends BaseActivity implements TextView.OnEditorActionListener, View.OnClickListener {
+public class SearchActivity extends BaseActivity implements TextView.OnEditorActionListener,
+        View.OnClickListener {
     private static final int REQ_CODE_SPEECH_INPUT = 12;
     private Toolbar mToolbarSearch;
     private EditText mEditSearch;
-    private int mSearchCondition = MULTI_SEARCH;
+    private String mSearchCondition = SEARCH_MULTI;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -133,7 +134,7 @@ public class SearchActivity extends BaseActivity implements TextView.OnEditorAct
                 mEditSearch.setHint(getString(R.string.search_television));
                 break;
             case R.id.action_multi_search:
-                mSearchCondition = MULTI_SEARCH;
+                mSearchCondition = SEARCH_MULTI;
                 mEditSearch.setHint(getString(R.string.input_keyword));
                 break;
             case R.id.action_voice:

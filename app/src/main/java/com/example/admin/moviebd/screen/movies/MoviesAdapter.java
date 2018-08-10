@@ -23,15 +23,19 @@ import static com.example.admin.moviebd.screen.search.result.MediaType.MEDIA_TYP
 public class MoviesAdapter extends BaseRecyclerViewAdapter<Movie> {
     private static final int VIEW_TYPE_ITEM = 1;
     private static final int VIEW_TYPE_LOADING = 2;
-    private List<Movie> mMovies;
     private Context mContext;
+    private List<Movie> mMovies;
     private OnMovieItemClickListener mOnMovieItemClickListener;
+    private MoviesPresenter mMoviesPresenter;
 
-    public MoviesAdapter(Context context, List<Movie> movies, OnMovieItemClickListener onMovieItemClickListener) {
+    public MoviesAdapter(Context context, List<Movie> movies,
+                         OnMovieItemClickListener onMovieItemClickListener,
+                         MoviesPresenter moviesPresenter) {
         super(context, movies);
         this.mContext = context;
         this.mMovies = movies;
         this.mOnMovieItemClickListener = onMovieItemClickListener;
+        this.mMoviesPresenter = moviesPresenter;
     }
 
     @NonNull
@@ -58,6 +62,7 @@ public class MoviesAdapter extends BaseRecyclerViewAdapter<Movie> {
         if (holder instanceof ViewHolder) {
             Movie movie = mMovies.get(position);
             ((ViewHolder) holder).setData(movie);
+            ((ViewHolder) holder).setImageFavorites(mMoviesPresenter.isFavoritesLocal(String.valueOf(movie.getId())));
         } else if (holder instanceof LoadMoreViewHolder) {
             ((LoadMoreViewHolder) holder).setIndeterminateImage();
         }
@@ -109,6 +114,14 @@ public class MoviesAdapter extends BaseRecyclerViewAdapter<Movie> {
                     into(mImageMovie);
             mTextMediaType.setText(MEDIA_TYPE_MOVIE);
             mTextDate.setText(mContext.getString(R.string.release_date, movie.getReleaseDate()));
+        }
+
+        void setImageFavorites(boolean isState) {
+            if (isState) {
+                mImageOption.setImageResource(R.drawable.ic_favorites_selected);
+            } else {
+                mImageOption.setImageResource(R.drawable.ic_favories_normal);
+            }
         }
     }
 

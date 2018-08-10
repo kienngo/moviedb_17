@@ -3,7 +3,6 @@ package com.example.admin.moviebd.data.source.remote;
 import android.os.AsyncTask;
 
 import com.example.admin.moviebd.data.source.BaseDataSource;
-import com.example.admin.moviebd.data.source.MovieDataSource;
 import com.example.admin.moviebd.utils.Constant;
 import com.example.admin.moviebd.utils.common.StringUtils;
 

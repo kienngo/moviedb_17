@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.admin.moviebd.R;
 import com.example.admin.moviebd.screen.movie.MovieFragment;
+import com.example.admin.moviebd.screen.television.TelevisionFragment;
 
 import static com.example.admin.moviebd.screen.main.TabType.MOVIE_FRAGMENT;
 import static com.example.admin.moviebd.screen.main.TabType.TELEVISION_FRAGMENT;
@@ -27,7 +28,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
             case MOVIE_FRAGMENT:
                 return MovieFragment.newInstance();
             case TELEVISION_FRAGMENT:
-                return MovieFragment.newInstance();
+                return TelevisionFragment.newInstance();
             default:
                 return MovieFragment.newInstance();
         }

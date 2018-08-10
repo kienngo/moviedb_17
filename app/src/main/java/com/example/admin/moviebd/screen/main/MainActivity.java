@@ -16,9 +16,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.admin.moviebd.R;
 import com.example.admin.moviebd.screen.BaseActivity;
+import com.example.admin.moviebd.screen.favorites.FavoritesActivity;
+import com.example.admin.moviebd.screen.genres.GenresActivity;
 import com.example.admin.moviebd.screen.search.SearchActivity;
 
 import static com.example.admin.moviebd.screen.main.TabType.MOVIE_FRAGMENT;
@@ -134,12 +137,18 @@ public class MainActivity extends BaseActivity implements TabLayout.OnTabSelecte
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_genres:
+                Intent intentGenres = new Intent(this, GenresActivity.class);
+                startActivity(intentGenres);
                 break;
-            case R.id.action_changes:
+            case R.id.action_favorite:
+                Intent intentFavorite = new Intent(this, FavoritesActivity.class);
+                startActivity(intentFavorite);
                 break;
             case R.id.action_settings:
+                Toast.makeText(this, R.string.deverlopping, Toast.LENGTH_SHORT).show();
                 break;
             case R.id.action_rate:
+                Toast.makeText(this, R.string.deverlopping, Toast.LENGTH_SHORT).show();
                 break;
         }
         return true;
