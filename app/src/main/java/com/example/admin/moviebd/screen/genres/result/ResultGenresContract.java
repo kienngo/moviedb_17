@@ -17,5 +17,7 @@ public interface ResultGenresContract {
 
     interface Presenter {
         void getGenresFromApi(String url);
+        boolean insertMovieLocal(Movie movie);
+        boolean isFavoritesLocal(String movieId);
     }
 }

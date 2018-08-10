@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.admin.moviebd.Injection;
 import com.example.admin.moviebd.R;
@@ -44,8 +45,8 @@ public class MovieFragment extends BaseFragment implements MovieContract.View,
         MovieAdapter.OnMovieItemClickListener, View.OnClickListener {
     private LinearLayout mLayoutLoading;
     private RecyclerView mMoviesPopular, mMovieNowPlaying, mMovieTopRated, mMovieUpcoming;
-    private List<Movie> mPopular, mNowPlaying, mTopRated, mUpcoming;
     private TextView mTextMoviePopular, mTextMoreNowPlaying, mTextMoreTopRated, mTextMoreUpcoming;
+    private List<Movie> mPopular, mNowPlaying, mTopRated, mUpcoming;
     private MoviePresenter mMoviePresenter;
     private MainActivity mMainActivity;
 
@@ -58,7 +59,8 @@ public class MovieFragment extends BaseFragment implements MovieContract.View,
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mMainActivity = (MainActivity) getActivity();
-        mMoviePresenter = new MoviePresenter(this, Injection.getInstance().getMovieRepository());
+        mMoviePresenter = new MoviePresenter(this,
+                Injection.getInstance(mMainActivity).getMovieRepository());
     }
 
     @Nullable
@@ -105,14 +107,14 @@ public class MovieFragment extends BaseFragment implements MovieContract.View,
         mTextMoreUpcoming.setOnClickListener(this);
     }
 
-    private void createOptionMenuMovie(View view) {
+    private void createOptionMenuMovie(View view, final Movie movie) {
         PopupMenu mMenuOptionMovie = new PopupMenu(mMainActivity, view);
         mMenuOptionMovie.getMenuInflater().inflate(R.menu.menu_option_movie,
                 mMenuOptionMovie.getMenu());
         mMenuOptionMovie.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                // TODO: 8/3/2018 hanlder event click item menu in item movie
+                StringUtils.checkInsertMovie(mMainActivity, mMoviePresenter.insertMovieLocal(movie));
                 return true;
             }
         });
@@ -167,11 +169,12 @@ public class MovieFragment extends BaseFragment implements MovieContract.View,
 
     @Override
     public void onItemClick(int movieId) {
+
     }
 
     @Override
-    public void onShowOption(View view) {
-        createOptionMenuMovie(view);
+    public void onShowOption(View view, Movie movie) {
+        createOptionMenuMovie(view, movie);
     }
 
     @Override

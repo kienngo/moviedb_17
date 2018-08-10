@@ -3,7 +3,7 @@ package com.example.admin.moviebd.screen.movie;
 import com.example.admin.moviebd.data.model.Movie;
 import com.example.admin.moviebd.data.source.MovieDataSource;
 import com.example.admin.moviebd.data.source.repository.MovieRepository;
-import com.example.admin.moviebd.utils.Constants;
+import com.example.admin.moviebd.utils.Constant;
 import com.example.admin.moviebd.utils.common.StringUtils;
 
 import java.util.List;
@@ -40,15 +40,15 @@ public class MoviePresenter implements MovieContract.Presenter {
             public void onGetFailure(Exception exception) {
                 // TODO: 8/3/2018 get the next data about movie nowplaying when get movie popular failure
                 mView.onFailed(exception, POPULAR_MOVIE);
-                getMovieNowplayingFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
-                        Constants.ApiAddContent.MOVIE_NOWPLAYING, PAGE_DEFAULT));
+                getMovieNowplayingFromApi(StringUtils.formatStringMovieUrl(Constant.FINAL_API_MOVIE,
+                        Constant.ApiAddContent.MOVIE_NOWPLAYING, PAGE_DEFAULT));
             }
 
             @Override
             public void onComplete() {
                 // TODO: 8/3/2018 get the next data about movie nowplaying when get movie popular complete
-                getMovieNowplayingFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
-                        Constants.ApiAddContent.MOVIE_NOWPLAYING, PAGE_DEFAULT));
+                getMovieNowplayingFromApi(StringUtils.formatStringMovieUrl(Constant.FINAL_API_MOVIE,
+                        Constant.ApiAddContent.MOVIE_NOWPLAYING, PAGE_DEFAULT));
             }
         });
     }
@@ -69,14 +69,14 @@ public class MoviePresenter implements MovieContract.Presenter {
             @Override
             public void onGetFailure(Exception exception) {
                 mView.onFailed(exception, NOW_PLAYING_MOVIE);
-                getMovieTopRatedFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
-                        Constants.ApiAddContent.MOVIE_TOP_RATED, PAGE_DEFAULT));
+                getMovieTopRatedFromApi(StringUtils.formatStringMovieUrl(Constant.FINAL_API_MOVIE,
+                        Constant.ApiAddContent.MOVIE_TOP_RATED, PAGE_DEFAULT));
             }
 
             @Override
             public void onComplete() {
-                getMovieTopRatedFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
-                        Constants.ApiAddContent.MOVIE_TOP_RATED, PAGE_DEFAULT));
+                getMovieTopRatedFromApi(StringUtils.formatStringMovieUrl(Constant.FINAL_API_MOVIE,
+                        Constant.ApiAddContent.MOVIE_TOP_RATED, PAGE_DEFAULT));
             }
         });
     }
@@ -97,14 +97,14 @@ public class MoviePresenter implements MovieContract.Presenter {
             @Override
             public void onGetFailure(Exception exception) {
                 mView.onFailed(exception, TOP_RATED_MOVIE);
-                getMovieUpcomingFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
-                        Constants.ApiAddContent.MOVIE_UPCOMING, PAGE_DEFAULT));
+                getMovieUpcomingFromApi(StringUtils.formatStringMovieUrl(Constant.FINAL_API_MOVIE,
+                        Constant.ApiAddContent.MOVIE_UPCOMING, PAGE_DEFAULT));
             }
 
             @Override
             public void onComplete() {
-                getMovieUpcomingFromApi(StringUtils.formatStringMovieUrl(Constants.FINAL_API_MOVIE,
-                        Constants.ApiAddContent.MOVIE_UPCOMING, PAGE_DEFAULT));
+                getMovieUpcomingFromApi(StringUtils.formatStringMovieUrl(Constant.FINAL_API_MOVIE,
+                        Constant.ApiAddContent.MOVIE_UPCOMING, PAGE_DEFAULT));
             }
         });
     }
@@ -133,5 +133,19 @@ public class MoviePresenter implements MovieContract.Presenter {
                 mView.onDismissLoading();
             }
         });
+    }
+
+    @Override
+    public boolean insertMovieLocal(Movie movie) {
+        if (isFavoritesLocal(String.valueOf(movie.getId()))){
+            return false;
+        }else{
+            return mMovieRepository.insertMovie(movie);
+        }
+    }
+
+    @Override
+    public boolean isFavoritesLocal(String movieId) {
+        return mMovieRepository.isFavouriteMovie(movieId);
     }
 }
